@@ -112,8 +112,10 @@ $ ./Configure linux-mips32 shared zlib-dynamic \
 --with-zlib-lib=$ROOTFS/usr/lib
 ```
 After configuring we need to edit the Makefile and add DESTDIR=${ROOTFS}.Then simply run:
+```bash
 $ make CFLAGS="-I${ROOTFS}/usr/include" LDFLAGS="-L${ROOTFS}/usr/lib" $(EXTRACFLAGS)
 $ make install
+```
 
 Inside the rootfs directory there is the user folder that contains all the necessary libs(zlib and libcrypto .so files in the /lib dir) and binaries(/usr/bin and /usr/sbin) that can be transfered to the target machine. After transfering them to the target system, remember to chmod +x the binaries.
  
