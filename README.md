@@ -1,6 +1,6 @@
 # MIPS32-Cross-Compile
 
-*In the need for secure remote connection to my home network from abroad I ended up using an old ISP router as an OpenVpn and SSL enabled device. The router I had laying around is a Speedport W 724V Typ Ci, running proprietary firmware from OTE. As expected it was completely lucking ssh and openvpn functionallity, although it had stunnel that could be used to securely tunnel ssh.Searching on the internet I found that the device is susceptible to shell injection attack. After gaining root shell access through telnet to the device, I found that the firmware is built around Linux 2.6.30(uname -a) and the C Standard library is uClibc 0.9.30(just checked the /lib path for clues for shared libraries ). The SoC on the router is a Broadcom BCM963268 that encloses a Broadcom4350 MIPS32 Big Endian ver.1 cpu.
+*In the need for secure remote connection to my home network from abroad, I ended up using an old ISP router as an OpenVpn and SSL enabled device. The router I had laying around is a Speedport W 724V Typ Ci, running proprietary firmware from OTE. As expected it was completely lucking ssh and openvpn functionallity, although it had stunnel that could be used to securely tunnel ssh.Searching on the internet I found that the device is susceptible to shell injection attack. After gaining root shell access through telnet to the device, I found that the firmware is built around Linux 2.6.30(uname -a) and the C Standard library is uClibc 0.9.30(just checked the /lib path for clues for shared libraries ). The SoC on the router is a Broadcom BCM963268 that encloses a Broadcom4350 MIPS32 Big Endian ver.1 cpu.
 So the main information needed for cross compiling for the target where found. The cross compiler if set to produce dynamicly linked binaries and libraries should be provided with Linux 2.6.30 Headers(if building whole syslinux image) and uClibc 0.9.30(uClibc is not backward compatible).*
 
 ## - Sourcery's CodeBench Lite Mips Cross-Compiler
@@ -122,7 +122,7 @@ Inside the rootfs directory there is the user folder that contains all the neces
 
 
 ## Conclusion
--- **Sourcery's CodeBench Lite Mips Cross-Compiler** can produce working static binaries for my target machine. On the other hand though, cross-compiling dynamic libraries and linking programs proved to be a real chore. I managed to cross-compile dynamic zlib and openssl, but other programs ended up partially working on the rootfs on my target router. 
+-- **Sourcery's CodeBench Lite Mips Cross-Compiler** can produce working static binaries for my target machine. On the other hand, cross-compiling dynamic libraries and linking programs proved to be a real chore. I managed to cross-compile dynamic zlib and openssl, but other programs ended up partially working on the rootfs on my target router. 
 Working with **Buildroot's toolchain cross-compiler** in contrast, made things really easy and simple. Make and configure process had way less hickups and stuff to fix were little to none. 
 
 -- **If you want to grab some binaries and/or see how to use Buildroot to build staticly and dynamicly linked programs go to the Buildroot dir on the git.**
