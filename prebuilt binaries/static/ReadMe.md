@@ -5,7 +5,7 @@ Here are some prebuilt STATIC binaries for MIPS32 Big Endian I cross-compiled us
 * -openssl
 * -scp
 * -sftp
-* -ssh , ssh-add, ssh-agent, ssh-copy-id, ssh-keygen, ssh-keyscan and ssh-copy-id script
+* -ssh , ssh-add, ssh-agent, ssh-keygen, ssh-keyscan and ssh-copy-id script
 
 
 ## For /usr/sbin directory:
