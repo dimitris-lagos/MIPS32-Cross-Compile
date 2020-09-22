@@ -1,7 +1,7 @@
 # MIPS32-Cross-Compile
 
 *In the need for secure remote connection to my home network from abroad, I ended up using an old ISP router as an OpenVpn and SSL enabled device. The router I had laying around is a Speedport W 724V Typ Ci, running proprietary firmware from OTE. As expected it was completely lucking ssh and openvpn functionallity, although it had stunnel that could be used to securely tunnel ssh.Searching on the internet I found that the device is susceptible to shell injection attack. After gaining root shell access through telnet to the device, I found that the firmware is built around Linux 2.6.30(uname -a) and the C Standard library is uClibc 0.9.30(just checked the /lib path for clues for shared libraries ). The SoC on the router is a Broadcom BCM963268 that encloses a Broadcom4350 MIPS32 Big Endian ver.1 cpu.
-So the main information needed for cross compiling for the target where found. The cross compiler if set to produce dynamicly linked binaries and libraries should be provided with Linux 2.6.30 Headers(if building whole syslinux image) and uClibc 0.9.30(uClibc is not backward compatible).*
+So the main information needed for cross compiling for the target where found. The cross compiler if set to produce dynamicly linked binaries and libraries should be provided with Linux 2.6.30 Headers and uClibc 0.9.30(uClibc is not backward compatible).*
 
 ## - Sourcery's CodeBench Lite Mips Cross-Compiler
    *First cross-compiler I tried was Sourcery's CodeBench Lite 2016.05-8, which is build for MIPS32r2 and by default makes use of Glibc and Linux Headers are for 2.6.32. Although you can pass options to build for MIPS32 rev.1(-march=mips32), build for Big Endian(-EB) and use uClibc 0.9.30 (-muclibc).*
