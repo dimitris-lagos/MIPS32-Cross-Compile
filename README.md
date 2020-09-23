@@ -117,7 +117,7 @@ $ make CFLAGS="-I${ROOTFS}/usr/include" LDFLAGS="-L${ROOTFS}/usr/lib" $(EXTRACFL
 $ make install
 ```
 
-Inside the rootfs directory there is the user folder that contains all the necessary libs(zlib and libcrypto .so files in the /lib dir) and binaries(/usr/bin and /usr/sbin) that can be transfered to the target machine. After transfering them to the target system, remember to chmod +x the binaries.
+Inside the rootfs directory there is the user folder that contains all the necessary libs(zlib and libcrypto .so files in the /lib dir) and binaries(/usr/bin and /usr/sbin) that can be transfered to the target machine(remember to remount the targets rootfs or userfs as rw).  After transfering them to the target system, remember to chmod +x the binaries.
  
 
 
