@@ -5,8 +5,11 @@ So the main information needed for cross compiling for the target where found. T
 
 ## Todo:
 -Elaborate some more on the Buildroot procedure.
+
 -Although it's really tempting to use the scp command to copy and test the executables on the fly on the target machine, it's actually pretty risky. Need to include qemu emulation procedure.
+
 -Maybe add ssh and openvpn configuration steps.
+
 
 ## - Sourcery's CodeBench Lite Mips Cross-Compiler
    *First cross-compiler I tried was Sourcery's CodeBench Lite 2016.05-8, which is build for MIPS32r2 and by default makes use of Glibc and Linux Headers are for 2.6.32. Although you can pass options to build for MIPS32 rev.1(-march=mips32), build for Big Endian(-EB) and use uClibc 0.9.30 (-muclibc).*
